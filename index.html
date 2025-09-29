@@ -5,43 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sujal's Portfolio</title>
     <link rel="icon" href="images/myIcon.png" type="image/png" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-   <header>
-    <nav>
-      <a href="#home" class="logo">SujalSubedi</a>
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="hamburger" id="hamburger">☰</button>
-    </nav>
-  </header>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-spinner"></div>
+      <p>Loading Portfolio...</p>
+    </div>
 
+    <!-- Cursor Effect -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Theme Toggle -->
+ 
+
+    <header>
+      <nav>
+        <a href="#home" class="logo">SujalSubedi</a>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+         <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" class="theme-switch" />
+      <label for="theme-switch" class="theme-label">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+        <span class="theme-ball"></span>
+      </label>
+    </div>
+    
+    </header>
 
     <section id="home" class="maincontainer">
-      <div class="right-img">
-        <img src="./images/sujalsubedi.jpg" alt="Your Photo" />
+      <div class="floating-elements">
+        <div class="floating-element el-1"></div>
+        <div class="floating-element el-2"></div>
+        <div class="floating-element el-3"></div>
       </div>
+
+      <div class="right-img">
+        <div class="image-container">
+          <img src="./images/sujalsubedi.jpg" alt="Sujal Subedi" />
+          <div class="image-overlay">
+            <div class="social-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="left-content">
-        <h1>Hello, I'm SujalSubedi !</h1>
-        <p>
-          I’m a BCA student passionate about web and app development. I have built projects using PHP and the MERN stack,
-          and I also have knowledge of Java basics, Servlets, and Spring Boot. I enjoy creating full-stack web applications 
-          and mobile apps. I am currently seeking a  internship to 
-          enhance my skills through real-world projects.
+        <h1 class="typing-animation">Hello, I'm SujalSubedi !</h1>
+        <p class="fade-in">
+          I'm a BCA student passionate about web and app development. I have
+          built projects using PHP and the MERN stack, and I also have knowledge
+          of Java basics, Servlets, and Spring Boot. I enjoy creating full-stack
+          web applications and mobile apps. I am currently seeking a internship
+          to enhance my skills through real-world projects.
         </p>
-        <button
-          class="btn"
-          onclick="document.getElementById('projects').scrollIntoView()"
-        >
-          View My Projects
-        </button>
+        <div class="cta-buttons">
+          <button
+            class="btn primary-btn"
+            onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
+          >
+            View My Projects
+          </button>
+          <button
+            class="btn secondary-btn"
+            onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+          >
+            Contact Me
+          </button>
+        </div>
       </div>
     </section>
 
@@ -49,52 +106,112 @@
       <h2 class="project-title">Skills & Technologies</h2>
       <div class="skills-container">
         <div class="skill-card">
-          <img src="./images/html.png" alt="HTML" />
-          <div>HTML</div>
+          <div class="skill-icon">
+            <img src="./images/html.png" alt="HTML" />
+          </div>
+          <div class="skill-name">HTML</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="95"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/css.png" alt="CSS" />
-          <div>CSS</div>
+          <div class="skill-icon">
+            <img src="./images/css.png" alt="CSS" />
+          </div>
+          <div class="skill-name">CSS</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="90"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/js.png" alt="JavaScript" />
-          <div>JavaScript</div>
+          <div class="skill-icon">
+            <img src="./images/js.png" alt="JavaScript" />
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="85"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/react.png" alt="React" />
-          <div>React</div>
+          <div class="skill-icon">
+            <img src="./images/react.png" alt="React" />
+          </div>
+          <div class="skill-name">React</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="80"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/node.png" alt="Node.js" />
-          <div>Node.js</div>
+          <div class="skill-icon">
+            <img src="./images/node.png" alt="Node.js" />
+          </div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="80"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/mongodb.png" alt="MongoDB" />
-          <div>MongoDB</div>
+          <div class="skill-icon">
+            <img src="./images/mongodb.png" alt="MongoDB" />
+          </div>
+          <div class="skill-name">MongoDB</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="75"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/java.png" alt="Java" />
-          <div>Java</div>
+          <div class="skill-icon">
+            <img src="./images/java.png" alt="Java" />
+          </div>
+          <div class="skill-name">Java</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="70"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/php.png" alt="PHP" />
-          <div>PHP</div>
+          <div class="skill-icon">
+            <img src="./images/php.png" alt="PHP" />
+          </div>
+          <div class="skill-name">PHP</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="75"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/git.png" alt="Git" />
-          <div>Git</div>
+          <div class="skill-icon">
+            <img src="./images/git.png" alt="Git" />
+          </div>
+          <div class="skill-name">Git</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="85"></div>
+          </div>
         </div>
         <div class="skill-card">
-          <img src="./images/figma.png" alt="Figma" />
-          <div>Figma</div>
+          <div class="skill-icon">
+            <img src="./images/figma.png" alt="Figma" />
+          </div>
+          <div class="skill-name">Figma</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="70"></div>
+          </div>
         </div>
-         <div class="skill-card">
-           <img src="./images/tailwind.png" style="border-radius:999px;" alt="Figma" />
-           <div>Tailwind CSS</div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="./images/tailwind.png" alt="Tailwind CSS" />
+          </div>
+          <div class="skill-name">Tailwind CSS</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="80"></div>
+          </div>
         </div>
-         <div class="skill-card">
-         <img src="./images/springboot.png" alt="Figma" />
-          <div>SpringBoot</div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="./images/springboot.png" alt="SpringBoot" />
+          </div>
+          <div class="skill-name">SpringBoot</div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-level="65"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -103,7 +220,19 @@
       <h2 class="project-title">Projects</h2>
       <div class="projects-container">
         <div class="project-card">
-          <img src="./images/hams.png" alt="hams"" />
+          <div class="project-image">
+            <img src="./images/hams.png" alt="HAMS" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
           <h3>HAMS</h3>
           <p>
             Healthcare Appointment Management System built using the MERN stack.
@@ -119,12 +248,24 @@
         </div>
 
         <div class="project-card">
-          <img src="./images/bookhub.png" alt="bookhub" />
+          <div class="project-image">
+            <img src="./images/bookhub.png" alt="BookHub" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
           <h3>BookHub</h3>
           <p>
-            BookHub is a book borrowing platform built using the MERN stack  enabling users to browse,
-            borrow, and manage books seamlessly. Features include a responsive UI ,
-            admin dashboard.
+            BookHub is a book borrowing platform built using the MERN stack
+            enabling users to browse, borrow, and manage books seamlessly.
+            Features include a responsive UI , admin dashboard.
           </p>
           <div class="tags">
             <span class="tag">MongoDB</span>
@@ -135,7 +276,19 @@
         </div>
 
         <div class="project-card">
-          <img src="./images/electronic-ecommerce.png" alt="ecommerce" />
+          <div class="project-image">
+            <img src="./images/electronic-ecommerce.png" alt="E-commerce" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
           <h3>Online Electronic Shop</h3>
           <p>
             Responsive electronic e-commerce website built with PHP, JavaScript,
@@ -154,42 +307,50 @@
 
     <section id="contact" class="contact-section">
       <h2>Contact Me</h2>
-      <p>
-        Feel free to reach out to me or just say a friendly hello.👋
-      </p>
-      <form action="https://formsubmit.co/sujalsubedi541@gmail.com" method="POST"   class="contact-form">
-        <input type="text" name="name" required placeholder="Your Name" />
-        <input type="email" name="email" required placeholder="Your Email" />
-        <textarea name="message" required placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
+      <p>Feel free to reach out to me or just say a friendly hello.👋</p>
+      <form
+        action="https://formsubmit.co/sujalsubedi541@gmail.com"
+        method="POST"
+        class="contact-form"
+      >
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Your Name" />
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" required placeholder="Your Email" />
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            required
+            placeholder="Your Message"
+          ></textarea>
+          <i class="fas fa-comment"></i>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
       </form>
-
-     
     </section>
 
     <footer>
-      &copy; <span id="datenow"></span> SujalSubedi | Built with using HTML, CSS
-      & JS
+      <div class="footer-content">
+        <div class="footer-text">
+          &copy; <span id="datenow"></span> SujalSubedi | Built with using HTML,
+          CSS & JS
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </footer>
+
     <script src="scriptfile.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
