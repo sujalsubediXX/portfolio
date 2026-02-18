@@ -1,3 +1,20 @@
+window.addEventListener('load', function () {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("success") === "true") {
+    const toast = document.getElementById("toast");
+
+    if (toast) {
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000); // disappears after 3 seconds
+    }
+  }
+});
+
+
 // Loading screen
 window.addEventListener('load', function() {
   const loadingScreen = document.querySelector('.loading-screen');
