@@ -20,10 +20,6 @@ html {
 }
 body {
   background-color: var(--bg);
-  background-image:
-    linear-gradient(rgba(246, 239, 237, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(246, 239, 237, 0.055) 1px, transparent 1px);
-  background-size: 50px 50px;
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.6;
@@ -137,12 +133,34 @@ footer a:hover {
   padding: 125px 28px;
 }
 .hero {
+  position: relative;
+  isolation: isolate;
   min-height: 720px;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 90px;
   align-items: center;
   padding-top: 90px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-image:
+    linear-gradient(rgba(239, 158, 175, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 158, 175, 0.2) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 .eyebrow,
 .section-kicker {
